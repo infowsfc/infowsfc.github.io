@@ -1,1 +1,0 @@
-import"./react.SIfiwpqq.js";import{t as e}from"./jsx-runtime.XNvk5S4D.js";import{t}from"./VisualEditing.DmsBxidZ.js";var n=e();function r(){return(0,n.jsx)(t,{portal:!0,refresh:()=>(window.location.reload(),!1)})}export{r as default};
