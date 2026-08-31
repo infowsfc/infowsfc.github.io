@@ -1,0 +1,1576 @@
+[
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "companyName",
+        "type": "string",
+        "title": "Bedrijfsnaam"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "tagline",
+        "type": "string",
+        "title": "Kernzin"
+      },
+      {
+        "name": "phone",
+        "type": "string",
+        "title": "Telefoonnummer"
+      },
+      {
+        "name": "email",
+        "type": "string",
+        "title": "E-mailadres"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "name": "whatsapp",
+        "type": "url",
+        "title": "WhatsApp-link"
+      },
+      {
+        "description": "Sleep menu-items om de volgorde te wijzigen.",
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "label",
+                "type": "string",
+                "title": "Tekst"
+              },
+              {
+                "name": "href",
+                "type": "string",
+                "title": "Link (leeg bij dropdown)"
+              },
+              {
+                "of": [
+                  {
+                    "fields": [
+                      {
+                        "name": "label",
+                        "type": "string",
+                        "title": "Tekst"
+                      },
+                      {
+                        "name": "href",
+                        "type": "string",
+                        "title": "Link"
+                      }
+                    ],
+                    "type": "object"
+                  }
+                ],
+                "name": "children",
+                "type": "array",
+                "title": "Dropdownlinks"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "navigation",
+        "type": "array",
+        "title": "Hoofdnavigatie"
+      },
+      {
+        "name": "headerCtaLabel",
+        "type": "string",
+        "title": "Tekst menuknop"
+      },
+      {
+        "name": "headerCtaHref",
+        "type": "string",
+        "title": "Link menuknop"
+      },
+      {
+        "name": "footerContactTitle",
+        "type": "string",
+        "title": "Footer: contactkop"
+      },
+      {
+        "name": "footerLinksTitle",
+        "type": "string",
+        "title": "Footer: linkskop"
+      },
+      {
+        "name": "footerSocialTitle",
+        "type": "string",
+        "title": "Footer: socialkop"
+      },
+      {
+        "name": "footerCredit",
+        "type": "string",
+        "title": "Footer: fotocredits"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "label",
+                "type": "string",
+                "title": "Naam"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "uri",
+                        "constraint": {
+                          "options": {
+                            "scheme": [
+                              "/^http$/",
+                              "/^https$/"
+                            ],
+                            "allowRelative": false,
+                            "relativeOnly": false,
+                            "allowCredentials": false
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "name": "url",
+                "type": "url",
+                "title": "Link"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "socials",
+        "type": "array",
+        "title": "Sociale media"
+      }
+    ],
+    "name": "siteSettings",
+    "type": "document",
+    "title": "Algemene websitegegevens"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "title",
+        "type": "string",
+        "title": "Grote paginatitel"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "slug",
+        "type": "slug",
+        "title": "Pagina"
+      },
+      {
+        "name": "eyebrow",
+        "type": "string",
+        "title": "Handgeschreven ondertitel"
+      },
+      {
+        "rows": 4,
+        "name": "intro",
+        "type": "text",
+        "title": "Introductietekst"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alternatieve tekst"
+          }
+        ],
+        "name": "heroImage",
+        "type": "image",
+        "title": "Hero-afbeelding"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "description": "Wordt op de teampagina met een zachte overgang links van de hero getoond.",
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alternatieve tekst"
+          }
+        ],
+        "name": "heroImageLeft",
+        "type": "image",
+        "title": "Hero-afbeelding links"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "description": "Wordt op de teampagina met een zachte overgang rechts van de hero getoond.",
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alternatieve tekst"
+          }
+        ],
+        "name": "heroImageRight",
+        "type": "image",
+        "title": "Hero-afbeelding rechts"
+      },
+      {
+        "hidden": true,
+        "name": "heroImageUrl",
+        "type": "string",
+        "title": "Lokale standaardafbeelding"
+      },
+      {
+        "name": "heroImageAlt",
+        "type": "string",
+        "title": "Alternatieve tekst standaardafbeelding"
+      },
+      {
+        "description": "Posities en schalen die vanuit de tool Vrije layout worden opgeslagen.",
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "name": "target",
+                "type": "string",
+                "title": "Onderdeel"
+              },
+              {
+                "name": "x",
+                "type": "number"
+              },
+              {
+                "name": "y",
+                "type": "number"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "min",
+                        "constraint": 0.25
+                      },
+                      {
+                        "flag": "max",
+                        "constraint": 2.5
+                      }
+                    ]
+                  }
+                ],
+                "name": "scale",
+                "type": "number",
+                "title": "Schaal"
+              }
+            ],
+            "type": "object",
+            "name": "pageLayoutItem"
+          }
+        ],
+        "hidden": true,
+        "name": "layoutItems",
+        "type": "array",
+        "title": "Vrije desktoplayout"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "label",
+                "type": "string",
+                "title": "Tekst"
+              },
+              {
+                "name": "href",
+                "type": "string",
+                "title": "Link"
+              },
+              {
+                "initialValue": false,
+                "name": "outline",
+                "type": "boolean",
+                "title": "Alleen omlijning"
+              }
+            ],
+            "type": "object",
+            "name": "heroCta",
+            "title": "Knop"
+          }
+        ],
+        "name": "heroCtas",
+        "type": "array",
+        "title": "Knoppen in de hero"
+      },
+      {
+        "description": "Sleep aan het handvat links van een blok. Dit wijzigt direct de verticale volgorde in de visuele preview.",
+        "of": [
+          {
+            "fields": [
+              {
+                "options": {
+                  "list": [
+                    {
+                      "value": "story",
+                      "title": "Tekstblok"
+                    },
+                    {
+                      "value": "concepts",
+                      "title": "Concepten"
+                    },
+                    {
+                      "value": "logos",
+                      "title": "Logo-carrousels"
+                    },
+                    {
+                      "value": "videoStory",
+                      "title": "Video met tekst"
+                    },
+                    {
+                      "value": "assortment",
+                      "title": "Assortiment"
+                    },
+                    {
+                      "value": "units",
+                      "title": "Kramen"
+                    },
+                    {
+                      "value": "setups",
+                      "title": "3D-opstellingen"
+                    },
+                    {
+                      "value": "features",
+                      "title": "Kenmerkenkaarten"
+                    },
+                    {
+                      "value": "testimonials",
+                      "title": "Ervaringen / testimonials"
+                    },
+                    {
+                      "value": "contactForm",
+                      "title": "Contactformulier"
+                    },
+                    {
+                      "value": "privacy",
+                      "title": "Privacy-download"
+                    },
+                    {
+                      "value": "sustainabilityIntro",
+                      "title": "Duurzaamheidsintro"
+                    },
+                    {
+                      "value": "sustainabilityList",
+                      "title": "Duurzaamheidsstappen"
+                    },
+                    {
+                      "value": "statement",
+                      "title": "Statementbalk"
+                    },
+                    {
+                      "value": "imageBanner",
+                      "title": "Brede foto"
+                    },
+                    {
+                      "value": "photoGallery",
+                      "title": "Fotocollage"
+                    },
+                    {
+                      "value": "jobLists",
+                      "title": "Werken-bij-lijsten"
+                    },
+                    {
+                      "value": "contactBand",
+                      "title": "Contactbalk"
+                    }
+                  ],
+                  "layout": "dropdown"
+                },
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "story",
+                          "concepts",
+                          "logos",
+                          "videoStory",
+                          "assortment",
+                          "units",
+                          "setups",
+                          "features",
+                          "testimonials",
+                          "contactForm",
+                          "privacy",
+                          "sustainabilityIntro",
+                          "sustainabilityList",
+                          "statement",
+                          "imageBanner",
+                          "photoGallery",
+                          "jobLists",
+                          "contactBand"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "name": "sectionType",
+                "type": "string",
+                "title": "Soort blok"
+              },
+              {
+                "name": "heading",
+                "type": "string",
+                "title": "Kop"
+              },
+              {
+                "name": "headingSecondLine",
+                "type": "string",
+                "title": "Tweede kopregel"
+              },
+              {
+                "name": "eyebrow",
+                "type": "string",
+                "title": "Handgeschreven ondertitel"
+              },
+              {
+                "rows": 3,
+                "name": "intro",
+                "type": "text",
+                "title": "Korte toelichting"
+              },
+              {
+                "of": [
+                  {
+                    "rows": 4,
+                    "type": "text"
+                  }
+                ],
+                "name": "paragraphs",
+                "type": "array",
+                "title": "Tekstalinea’s"
+              },
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "fields": [
+                  {
+                    "name": "alt",
+                    "type": "string",
+                    "title": "Alternatieve tekst"
+                  }
+                ],
+                "name": "image",
+                "type": "image",
+                "title": "Afbeelding"
+              },
+              {
+                "hidden": true,
+                "name": "imageUrl",
+                "type": "string",
+                "title": "Lokale standaardafbeelding"
+              },
+              {
+                "name": "imageAlt",
+                "type": "string",
+                "title": "Alternatieve tekst standaardafbeelding"
+              },
+              {
+                "description": "Deze beelden worden samen als collage getoond.",
+                "of": [
+                  {
+                    "fields": [
+                      {
+                        "options": {
+                          "hotspot": true
+                        },
+                        "validation": [
+                          {
+                            "level": "error",
+                            "rules": [
+                              {
+                                "flag": "presence",
+                                "constraint": "required"
+                              }
+                            ]
+                          }
+                        ],
+                        "fields": [
+                          {
+                            "name": "alt",
+                            "type": "string",
+                            "title": "Alternatieve tekst"
+                          }
+                        ],
+                        "name": "image",
+                        "type": "image",
+                        "title": "Afbeelding"
+                      }
+                    ],
+                    "type": "object",
+                    "name": "pageGalleryImage",
+                    "title": "Foto"
+                  }
+                ],
+                "hidden": "conditional",
+                "name": "gallery",
+                "type": "array",
+                "title": "Foto’s in de collage"
+              },
+              {
+                "name": "placeholder",
+                "type": "string",
+                "title": "Melding / placeholder"
+              },
+              {
+                "name": "ctaLabel",
+                "type": "string",
+                "title": "Knoptekst"
+              },
+              {
+                "name": "ctaHref",
+                "type": "string",
+                "title": "Knoplink"
+              },
+              {
+                "name": "anchor",
+                "type": "string",
+                "title": "Anker-ID"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "Standaard",
+                      "value": "default"
+                    },
+                    {
+                      "title": "Zacht donker",
+                      "value": "soft"
+                    },
+                    {
+                      "title": "Donker",
+                      "value": "dark"
+                    },
+                    {
+                      "title": "Groen",
+                      "value": "green"
+                    }
+                  ]
+                },
+                "name": "theme",
+                "type": "string",
+                "title": "Achtergrondstijl"
+              },
+              {
+                "of": [
+                  {
+                    "fields": [
+                      {
+                        "name": "title",
+                        "type": "string",
+                        "title": "Titel"
+                      },
+                      {
+                        "rows": 4,
+                        "name": "text",
+                        "type": "text",
+                        "title": "Tekst"
+                      }
+                    ],
+                    "type": "object",
+                    "name": "pageItem",
+                    "title": "Onderdeel"
+                  }
+                ],
+                "name": "items",
+                "type": "array",
+                "title": "Kaarten / onderdelen"
+              },
+              {
+                "of": [
+                  {
+                    "fields": [
+                      {
+                        "validation": [
+                          {
+                            "level": "error",
+                            "rules": [
+                              {
+                                "flag": "presence",
+                                "constraint": "required"
+                              }
+                            ]
+                          }
+                        ],
+                        "name": "organization",
+                        "type": "string",
+                        "title": "Organisatie of kaarttitel"
+                      },
+                      {
+                        "rows": 5,
+                        "validation": [
+                          {
+                            "level": "error",
+                            "rules": [
+                              {
+                                "flag": "presence",
+                                "constraint": "required"
+                              }
+                            ]
+                          }
+                        ],
+                        "name": "quote",
+                        "type": "text",
+                        "title": "Citaat"
+                      },
+                      {
+                        "name": "author",
+                        "type": "string",
+                        "title": "Naam persoon"
+                      },
+                      {
+                        "name": "role",
+                        "type": "string",
+                        "title": "Functie / team"
+                      },
+                      {
+                        "fields": [
+                          {
+                            "name": "alt",
+                            "type": "string",
+                            "title": "Alternatieve tekst"
+                          }
+                        ],
+                        "name": "logo",
+                        "type": "image"
+                      }
+                    ],
+                    "type": "object",
+                    "name": "pageTestimonial",
+                    "title": "Ervaring"
+                  }
+                ],
+                "hidden": "conditional",
+                "name": "testimonials",
+                "type": "array",
+                "title": "Ervaringen / testimonials"
+              },
+              {
+                "hidden": "conditional",
+                "name": "offerHeading",
+                "type": "string",
+                "title": "Kop: wat bieden wij"
+              },
+              {
+                "of": [
+                  {
+                    "type": "string"
+                  }
+                ],
+                "hidden": "conditional",
+                "name": "offerItems",
+                "type": "array",
+                "title": "Punten: wat bieden wij"
+              },
+              {
+                "hidden": "conditional",
+                "name": "seekHeading",
+                "type": "string",
+                "title": "Kop: wat zoeken we in jou"
+              },
+              {
+                "of": [
+                  {
+                    "type": "string"
+                  }
+                ],
+                "hidden": "conditional",
+                "name": "seekItems",
+                "type": "array",
+                "title": "Punten: wat zoeken we in jou"
+              },
+              {
+                "of": [
+                  {
+                    "type": "string"
+                  }
+                ],
+                "name": "statements",
+                "type": "array",
+                "title": "Korte statements"
+              }
+            ],
+            "type": "object",
+            "name": "pageSection",
+            "title": "Paginablok"
+          }
+        ],
+        "name": "sections",
+        "type": "array",
+        "title": "Paginablokken"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 60
+              }
+            ]
+          }
+        ],
+        "name": "seoTitle",
+        "type": "string",
+        "title": "SEO-titel"
+      },
+      {
+        "rows": 3,
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 160
+              }
+            ]
+          }
+        ],
+        "name": "seoDescription",
+        "type": "text",
+        "title": "SEO-beschrijving"
+      }
+    ],
+    "name": "page",
+    "type": "document",
+    "title": "Websitepagina"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "title",
+        "type": "string",
+        "title": "Naam"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "slug",
+        "type": "slug",
+        "title": "URL"
+      },
+      {
+        "initialValue": 10,
+        "name": "order",
+        "type": "number",
+        "title": "Volgorde"
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "title": "Kort label"
+      },
+      {
+        "name": "tagline",
+        "type": "string",
+        "title": "Introductiezin"
+      },
+      {
+        "rows": 5,
+        "name": "description",
+        "type": "text",
+        "title": "Omschrijving"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "alt",
+            "type": "string",
+            "title": "Alternatieve tekst"
+          }
+        ],
+        "name": "heroImage",
+        "type": "image",
+        "title": "Hoofdafbeelding"
+      },
+      {
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "features",
+        "type": "array",
+        "title": "Belangrijkste kenmerken"
+      },
+      {
+        "description": "Sleep de items aan het handvat om de volgorde in de websitepreview te veranderen.",
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string",
+                "title": "Naam"
+              },
+              {
+                "rows": 3,
+                "name": "description",
+                "type": "text",
+                "title": "Omschrijving"
+              },
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "fields": [
+                  {
+                    "name": "alt",
+                    "type": "string",
+                    "title": "Alternatieve tekst"
+                  }
+                ],
+                "name": "image",
+                "type": "image",
+                "title": "Afbeelding"
+              },
+              {
+                "description": "Deze beelden verschijnen na de hoofdafbeelding.",
+                "of": [
+                  {
+                    "options": {
+                      "hotspot": true
+                    },
+                    "fields": [
+                      {
+                        "validation": [
+                          {
+                            "level": "error",
+                            "rules": [
+                              {
+                                "flag": "presence",
+                                "constraint": "required"
+                              }
+                            ]
+                          }
+                        ],
+                        "name": "alt",
+                        "type": "string",
+                        "title": "Alternatieve tekst"
+                      }
+                    ],
+                    "type": "image"
+                  }
+                ],
+                "name": "gallery",
+                "type": "array",
+                "title": "Slideshowfoto's"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "assortment",
+        "type": "array",
+        "title": "Assortiment"
+      },
+      {
+        "description": "Sleep de kramen aan het handvat om de volgorde te wijzigen.",
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string",
+                "title": "Naam"
+              },
+              {
+                "name": "label",
+                "type": "string",
+                "title": "Kort label"
+              },
+              {
+                "rows": 3,
+                "name": "description",
+                "type": "text",
+                "title": "Omschrijving"
+              },
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "fields": [
+                  {
+                    "name": "alt",
+                    "type": "string",
+                    "title": "Alternatieve tekst"
+                  }
+                ],
+                "name": "image",
+                "type": "image",
+                "title": "Afbeelding"
+              },
+              {
+                "description": "Deze beelden verschijnen na de hoofdafbeelding.",
+                "of": [
+                  {
+                    "options": {
+                      "hotspot": true
+                    },
+                    "fields": [
+                      {
+                        "validation": [
+                          {
+                            "level": "error",
+                            "rules": [
+                              {
+                                "flag": "presence",
+                                "constraint": "required"
+                              }
+                            ]
+                          }
+                        ],
+                        "name": "alt",
+                        "type": "string",
+                        "title": "Alternatieve tekst"
+                      }
+                    ],
+                    "type": "image"
+                  }
+                ],
+                "name": "gallery",
+                "type": "array",
+                "title": "Slideshowfoto's"
+              },
+              {
+                "of": [
+                  {
+                    "fields": [
+                      {
+                        "name": "label",
+                        "type": "string"
+                      },
+                      {
+                        "name": "value",
+                        "type": "string",
+                        "title": "Waarde"
+                      }
+                    ],
+                    "type": "object"
+                  }
+                ],
+                "name": "specs",
+                "type": "array",
+                "title": "Specificaties"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "units",
+        "type": "array",
+        "title": "Kramen / units"
+      },
+      {
+        "description": "Sleep de opstellingen aan het handvat om de volgorde in de preview te wijzigen.",
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string",
+                "title": "Naam"
+              },
+              {
+                "name": "label",
+                "type": "string",
+                "title": "Kort label"
+              },
+              {
+                "rows": 3,
+                "name": "description",
+                "type": "text",
+                "title": "Omschrijving"
+              },
+              {
+                "options": {
+                  "accept": ".glb"
+                },
+                "description": "Upload een geoptimaliseerd GLB-bestand. Dit is de eerste slide.",
+                "name": "model",
+                "type": "file",
+                "title": "3D-model"
+              },
+              {
+                "hidden": true,
+                "name": "modelUrl",
+                "type": "string",
+                "title": "Lokaal standaardmodel"
+              },
+              {
+                "description": "Deze foto's verschijnen in deze volgorde achter het 3D-model in de slideshow.",
+                "of": [
+                  {
+                    "options": {
+                      "hotspot": true
+                    },
+                    "fields": [
+                      {
+                        "validation": [
+                          {
+                            "level": "error",
+                            "rules": [
+                              {
+                                "flag": "presence",
+                                "constraint": "required"
+                              }
+                            ]
+                          }
+                        ],
+                        "name": "alt",
+                        "type": "string",
+                        "title": "Alternatieve tekst"
+                      }
+                    ],
+                    "type": "image"
+                  }
+                ],
+                "name": "gallery",
+                "type": "array",
+                "title": "Foto's na het 3D-model"
+              },
+              {
+                "of": [
+                  {
+                    "fields": [
+                      {
+                        "name": "label",
+                        "type": "string"
+                      },
+                      {
+                        "name": "value",
+                        "type": "string",
+                        "title": "Waarde"
+                      }
+                    ],
+                    "type": "object"
+                  }
+                ],
+                "name": "specs",
+                "type": "array",
+                "title": "Specificaties"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "setups",
+        "type": "array",
+        "title": "3D-opstellingen"
+      }
+    ],
+    "name": "concept",
+    "type": "document",
+    "title": "Cateringconcept"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "name",
+        "type": "string",
+        "title": "Naam"
+      },
+      {
+        "initialValue": 10,
+        "name": "order",
+        "type": "number",
+        "title": "Volgorde"
+      },
+      {
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alternatieve tekst"
+          }
+        ],
+        "name": "logo",
+        "type": "image"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "name": "website",
+        "type": "url"
+      }
+    ],
+    "name": "eventReference",
+    "type": "document",
+    "title": "Evenement / referentie"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "name",
+        "type": "string",
+        "title": "Naam"
+      },
+      {
+        "options": {
+          "hotspot": false
+        },
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alternatieve tekst"
+          }
+        ],
+        "name": "logo",
+        "type": "image"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "name": "website",
+        "type": "url"
+      },
+      {
+        "name": "order",
+        "type": "number",
+        "title": "Volgorde"
+      }
+    ],
+    "name": "partner",
+    "type": "document",
+    "title": "Samenwerking"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "name",
+        "type": "string",
+        "title": "Naam"
+      },
+      {
+        "initialValue": 10,
+        "name": "order",
+        "type": "number",
+        "title": "Volgorde"
+      },
+      {
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alternatieve tekst"
+          }
+        ],
+        "name": "logo",
+        "type": "image"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "name": "website",
+        "type": "url"
+      }
+    ],
+    "name": "eventLogo",
+    "type": "document",
+    "title": "Evenementlogo"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "title",
+        "type": "string",
+        "title": "Functienaam"
+      },
+      {
+        "initialValue": true,
+        "name": "active",
+        "type": "boolean",
+        "title": "Zichtbaar op de website"
+      },
+      {
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "regions",
+        "type": "array",
+        "title": "Regio’s"
+      },
+      {
+        "of": [
+          {
+            "lists": [
+              {
+                "value": "bullet",
+                "title": "Bulleted list"
+              },
+              {
+                "value": "number",
+                "title": "Numbered list"
+              }
+            ],
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "level": "error",
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "of": [],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              },
+              {
+                "value": "h1",
+                "title": "Heading 1"
+              },
+              {
+                "value": "h2",
+                "title": "Heading 2"
+              },
+              {
+                "value": "h3",
+                "title": "Heading 3"
+              },
+              {
+                "value": "h4",
+                "title": "Heading 4"
+              },
+              {
+                "value": "h5",
+                "title": "Heading 5"
+              },
+              {
+                "value": "h6",
+                "title": "Heading 6"
+              },
+              {
+                "value": "blockquote",
+                "title": "Quote"
+              }
+            ],
+            "type": "block"
+          }
+        ],
+        "name": "description",
+        "type": "array",
+        "title": "Omschrijving"
+      },
+      {
+        "name": "whatsappText",
+        "type": "string",
+        "title": "Vooraf ingevulde WhatsApp-tekst"
+      }
+    ],
+    "name": "vacancy",
+    "type": "document",
+    "title": "Vacature"
+  }
+]
