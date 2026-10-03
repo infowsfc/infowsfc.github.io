@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Profielfoto volgt</title>
+  <desc id="desc">Neutrale profielplaceholder in de kleuren van The Wall Street Food Company.</desc>
+  <rect width="1200" height="1200" fill="#ceb563"/>
+  <circle cx="600" cy="420" r="182" fill="#0d0d0d"/>
+  <path d="M188 1110c24-254 181-420 412-420s388 166 412 420H188Z" fill="#0d0d0d"/>
+  <path d="M246 1068c35-208 169-338 354-338s319 130 354 338" fill="none" stroke="#000" stroke-width="14" opacity=".45"/>
+</svg>
