@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#0d0d0d"/>
+  <g text-anchor="middle" font-family="Arial, sans-serif">
+    <text x="400" y="282" fill="#ceb563" font-size="32" font-weight="700">OUDE GRILLFOTO 1</text>
+    <text x="400" y="334" fill="#bdbec0" font-size="24">FOTO VOLGT</text>
+  </g>
+</svg>
