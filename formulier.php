@@ -21,7 +21,7 @@ $email = filter_var($value('email'), FILTER_VALIDATE_EMAIL);
 $message = trim((string) ($_POST['bericht'] ?? ''));
 $privacy = $value('privacy');
 
-if ($name === '' || $email === false || $message === '' || $privacy !== 'akkoord') {
+if ($name === '' || $email === false || $privacy !== 'akkoord') {
     http_response_code(422);
     exit('Controleer de verplichte velden en probeer het opnieuw.');
 }
