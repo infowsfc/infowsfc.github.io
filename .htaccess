@@ -1,14 +1,32 @@
 Options -Indexes
+DirectoryIndex index.html index.php
+ErrorDocument 404 /404.html
 
 RewriteEngine On
+# Preserve POST bodies from older cached contact pages when canonicalizing.
+RewriteCond %{HTTP_HOST} ^wallstreetfoodcompany\.nl$ [NC]
+RewriteRule ^ https://www.wallstreetfoodcompany.nl%{REQUEST_URI} [R=308,L]
 RewriteCond %{HTTP_HOST} ^www\.wallstreetfoodcompany\.nl$ [NC]
-RewriteRule ^ https://wallstreetfoodcompany.nl%{REQUEST_URI} [R=301,L]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://www.wallstreetfoodcompany.nl%{REQUEST_URI} [R=308,L]
+
+# Public URLs from the previous WordPress sitemap.
+RewriteRule ^over/?$ /over/geschiedenis/ [R=301,L]
+RewriteRule ^menu/?$ /#concepten [R=301,L,NE]
+RewriteRule ^werken-bij/?$ /over/het-team/ [R=301,L]
+RewriteRule ^(?:wp-sitemap|sitemap_index|page-sitemap)\.xml$ /sitemap.xml [R=301,L]
+
+AddType model/gltf-binary .glb
+AddType model/gltf+json .gltf
 
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
   Header always set X-Frame-Options "SAMEORIGIN"
+  <FilesMatch "\.(html|xml)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
 </IfModule>
 
 <IfModule mod_deflate.c>
